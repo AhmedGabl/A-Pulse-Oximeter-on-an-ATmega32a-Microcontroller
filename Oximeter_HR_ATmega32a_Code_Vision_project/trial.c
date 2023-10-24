@@ -189,7 +189,8 @@ void main(void)
             }  
               if(maxindex > temp )
                temp= maxindex;       //      lcd_gotoxy(0, 1);lcd_printf("hi = %d",maxindex);delay_ms(3000); 
-            
+            //this condition to not update case fingure tip move--> will stat stable at right value
+		if(bpm < (temp * 60 / (N_WAVE / 2)))
             // Calculate the heart rate in BPM
             bpm =  temp * 60 / (N_WAVE / 2);
 
